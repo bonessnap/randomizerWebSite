@@ -1,0 +1,96 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    background-color: #2c3441; 
+    background-size: cover;
+    color: rgb(102, 252, 139);
+    margin: 0px;
+    font-size: 110%;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+a{
+    color: rgb(102, 252, 139);
+    text-decoration: none;
+    transition: all 0.5s;
+}
+a:hover{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
+    font-size: 120%;
+}
+
+header{
+    background: linear-gradient(315deg, #364c5f 0%, #284436);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    box-shadow: 0px 5px 10px 2px rgba(37, 255, 17, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+footer{
+    background: linear-gradient(315deg, #364c5f 0%, #284436);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    box-shadow: 0px 5px 10px 2px rgba(37, 255, 17, 0.2);
+}
+
+#section_user_profile{
+    position: fixed;
+    top: 60px;
+    left: 10px;
+    transition: all 0.5s;
+    font-size: 80%;
+    width: 150px;
+    background-color: rgba(53, 65, 66, 0.644);
+    box-shadow: 0px 5px 10px 2px rgba(37, 255, 17, 0.2);
+}
+#section_user_profile:hover{
+    background-color: rgba(72, 87, 88, 0.644);
+    width: 170px;
+}
+
+#section_content_block{
+    transition: all 0.5s;
+    font-size: 90%;
+    width: 80%;
+    height: 100%;
+}
+#section_content_block:hover{
+    box-shadow: 0px 10px 10px 10px rgba(37, 255, 17, 0.2);
+}
+
+nav{
+    /* без этого поля навигация занимает не 100% ширины*/
+    width: 100%;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation_horizontal li{
+    /* убирает кружочки слева от тегов 
+    и выравнивает его горизонтально*/
+    display: inline;
+}
+
+.navigation_horizontal ul{
+    display: flex;
+    justify-content: space-around;
+}
