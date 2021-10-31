@@ -1,0 +1,142 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    background-color: #191e25; 
+    color: rgb(102, 252, 139);
+    margin: 0px;
+    padding: 0px;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/*Дизайн текста*/ 
+a{
+    color: rgb(102, 252, 139);
+    text-decoration: none;
+    transition: all 0.5s;
+}
+a:hover{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
+    font-size: 105%;
+}
+
+p::selection{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
+}
+
+h2::selection{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
+}
+
+/* HEADER FOOTER*/
+header, footer{
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid #35443b;
+    font-size: 35px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+header{
+    margin-bottom: 20px;
+}
+
+header:hover{
+    border-bottom: 3px solid #11A457;
+}
+
+/*Header content blocks*/
+.header_fill_block{
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+
+/* Navigation */
+nav{
+    width: 100%;
+    height: 100%;
+}
+
+ul{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0%;
+}
+
+li{
+    display: inline;
+    border-radius: 0px 40px 40px 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+li:hover{
+    background-color: #2d3642; 
+    border-left: 8px solid #11A457;
+}
+
+/* BUTTONS*/
+button{
+    box-shadow: 0px 5px 10px 2px rgba(37, 255, 17, 0.2);
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 3px solid #000000;
+    color: rgb(102, 252, 139);
+    background-color: rgb(76, 114, 78);
+    text-decoration: none;
+    transition: all 0.5s;
+    padding: 8px 15px;
+    height: 100%;
+}
+
+button:hover{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
+    font-size: 23px;
+    background-color: rgb(98, 146, 100);
+}
+
+/* Inputbox*/
+
+input{
+    background-color: transparent;
+    box-decoration-break: unset;
+    background-color: rgb(76, 114, 78);
+    width: 50%;
+    height: 50px;
+    border: 3px solid #000000;
+    font-size: 20px;
+    color: rgb(102, 252, 139);
+    box-shadow: 0px 5px 10px 2px rgba(37, 255, 17, 0.2);
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+}
+
+input::selection{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
+}

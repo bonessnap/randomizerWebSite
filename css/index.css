@@ -1,0 +1,36 @@
+/*Main*/
+main{
+    height: 100%;
+    width: 100%;
+    display: inline-grid;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 10fr 4fr;
+}
+
+/* Main content block*/
+.content_block{
+    background-color: #232933; 
+    border: 2px solid #35443b;
+    text-decoration: none;
+    transition: all 0.5s;
+    border-radius: 40px;
+}
+
+.content_block:hover{
+    border: 2px solid #11A457;  
+}
+
+/* Блок справа*/
+.aside_right{
+    background-color: #232933; 
+    border-radius: 40px;
+    border: 2px solid #35443b;
+    text-decoration: none;
+    transition: all 0.5s;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.aside_right:hover{
+    border: 5px solid #11A457;  
+}
