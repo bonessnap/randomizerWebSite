@@ -8,7 +8,7 @@ main{
 }
 
 /* Main content block*/
-.content_block{
+#content_block{
     background-color: #232933; 
     border: 2px solid #35443b;
     text-decoration: none;
@@ -16,12 +16,12 @@ main{
     border-radius: 40px;
 }
 
-.content_block:hover{
+#content_block:hover{
     border: 2px solid #11A457;  
 }
 
 /* Блок справа*/
-.aside_right{
+#aside_right{
     background-color: #232933; 
     border-radius: 40px;
     border: 2px solid #35443b;
@@ -31,6 +31,66 @@ main{
     grid-template-columns: 1fr;
 }
 
-.aside_right:hover{
+#aside_right:hover{
     border: 5px solid #11A457;  
+}
+
+/* БЛОК СЛЕВА*/
+#aside_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Navigation */
+nav{
+    width: 100%;
+    height: 100%;
+}
+
+ul{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0%;
+}
+
+li{
+    border-radius: 0px 40px 40px 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 16px;
+}
+
+li:hover{
+    background-color: #2d3642; 
+    border-left: 8px solid #11A457;
+}
+
+#profile_block{
+    min-width: 150px;
+    background-color: #232933; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 40px;
+    border: 2px solid #35443b;
+    transition: all 0.5s;
+    font-size: 14px;
+}
+
+#profile_block:hover{
+    border: 2px solid #11A457;  
 }

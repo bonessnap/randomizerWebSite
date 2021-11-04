@@ -1,0 +1,72 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body{
+    box-sizing: border-box;
+    border: none;
+    color: rgb(102, 252, 139);
+    margin: 0px;
+    padding: 0px;
+    font-size: 30px;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+/*БЛОК СЛЕВА*/
+#aside_left{
+    width: 40%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#block_welcome{
+    background-color: #232933; 
+    border: 2px solid #35443b;
+    text-decoration: none;
+    border-radius: 40px;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    transition: all 0.5s;
+}
+
+#block_welcome:hover{
+    border: 2px solid #11A457;  
+}
+
+
+/*БЛОК LOGIN и REGISTRATION*/
+#login, #registration{
+    display: none;
+}
+
+#login:target, #registration:target{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #232933; 
+    height: 100%;
+    width: 60%;
+}
+
+/*Блок в котором кнопки*/
+#block_with_button{
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+
+.block_input{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    align-items: center;
+}
