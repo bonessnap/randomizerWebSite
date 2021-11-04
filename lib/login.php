@@ -1,30 +1,34 @@
 <?php // Страничка логина на сайт
     session_start();
-    $users = [
-        [
-            'username' => 'bonessnap',
-            'userpasswd' => '123'
-        ],
-        [
-            'username' => 'loh2',
-            'userpasswd' => '1234'
-        ]
-        ];
 
-        foreach ($users as $user)
-        {
-            // Если юзер найден
-            if($user['username'] === $_GET['username'])
-            {  // если пароль подходит
-                if($user['userpasswd'] === $_GET['userpasswd'])
-                {
-                    $_SESSION['username'] = $user['username'];
-                    $_SESSION['userpasswd'] = $user['userpasswd'];
-                    return header("location: /index.php");
-                }
-                // если пароль не подходит
-                else return header('Location: /authorization.php?errorCode=2');
-            }
-        }
-    return header('Location: /authorization.php?errorCode=1');
+    $mysql = new mysqli('localhost', 'root', '', 'mydb');
+    
+    // Если нету связи с базоой данных редирект с ошибкой 0
+    if ($mysql->connect_error) {
+        return header('Location: /authorization.php?errorCode=0#login');
+    }
+
+    // получаем инфу о пользователе
+    $username = $_GET['username'];
+    $userpassword = sha1($_GET['userpassword']);
+    $user = null;
+    
+    // ищем пользователей в базе
+    $users = $mysql->query("SELECT * FROM users WHERE username = '$username'");
+
+    // если пользователи нашлись
+    if ($users->num_rows > 0) {
+        $user = $users->fetch_assoc();
+    } // Если юзера по нейму нету редиректим на логин с ошибкой 1
+    else return header('Location: /authorization.php?errorCode=1#login');
+    
+    // Если неправильный пароль редиректим на логин с ошибкой 2
+    if ($user['userpassword'] !== $userpassword) {
+        return header('Location: /authorization.php?errorCode=2#login');
+    } 
+
+    // если всё ок, то добавляем пользователя в сессию
+    $_SESSION['userid'] = $user['userid'];
+    $_SESSION['username'] = $user['username'];
+    return header('Location: /index.php');
 ?>
