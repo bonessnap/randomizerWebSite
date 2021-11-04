@@ -1,3 +1,2 @@
 # randomizerWebSite
-
-Git host link: https://bonessnap.github.io/randomizerWebSite/
+Добавлено кучу всего, редизайн, пересмотр расположения блоков, общая логика, добавлено форму логина.
