@@ -9,6 +9,7 @@ Git host link: https://bonessnap.github.io/randomizerWebSite/
 ![image](https://user-images.githubusercontent.com/79045972/140622666-3aa2834a-827e-4b3d-90c3-bccce8476ba0.png)
 
 4. Пару фишек на сайте для пользователя с логином:
+
 Пользователь залогинен - его никнейм и ссылка для разлогина выведены в отдельный блок:
 ![image](https://user-images.githubusercontent.com/79045972/140622619-03e6d51c-1fef-47cc-aed6-2fe00f39ec65.png)
 
