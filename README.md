@@ -23,4 +23,5 @@ Git host link: https://bonessnap.github.io/randomizerWebSite/
 ![image](https://user-images.githubusercontent.com/79045972/140622595-d3939fbc-3124-4275-85b6-15ebcc833ae5.png)
 
 7. Редизайн странички авторизации в соответствии со стилем сайта, убрана фоновая  картинка.
+
 На всё про всё ушло 3 дня :)
