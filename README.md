@@ -23,5 +23,11 @@ Git host link: https://bonessnap.github.io/randomizerWebSite/
 ![image](https://user-images.githubusercontent.com/79045972/140622595-d3939fbc-3124-4275-85b6-15ebcc833ae5.png)
 
 7. Редизайн странички авторизации в соответствии со стилем сайта, убрана фоновая  картинка.
+8. Добавлен брейкпоинт на страничке авторизации, теперь при маленькой ширине экрана два основных блока выстраиваются не в ряд, а в столбик
+
+![image](https://user-images.githubusercontent.com/79045972/140639202-84ad36db-af05-478d-a9e8-4bdda6840fe9.png)
+![image](https://user-images.githubusercontent.com/79045972/140639207-2acbd661-06ae-4f41-9e7a-e24a8742b0e7.png)
+
+
 
 На всё про всё ушло 3 дня :)
