@@ -16,6 +16,30 @@ body{
     flex-direction: row;
 }
 
+@media only screen and (max-width : 650px)  {
+    body{
+        flex-direction: column;
+        overflow: visible;
+        align-items: center;
+        font-size: 20px;
+    }
+    #aside_left{
+        width: 80% !important;
+        margin: 0px;
+        padding: 0px;
+        padding-bottom: 20px;
+    }
+    #login, #registration{
+        width: 80% !important;
+        margin: 0px;
+        padding: 5px;
+        border: 2px solid #35443b;
+        border-radius: 40px;
+        text-decoration: none;
+    }
+}
+
+
 /*БЛОК СЛЕВА*/
 #aside_left{
     width: 40%;
@@ -33,6 +57,8 @@ body{
     border-radius: 40px;
     margin-right: 10%;
     margin-bottom: 10%;
+    padding-left: 10px;
+    padding-right: 10px;
     transition: all 0.5s;
 }
 
