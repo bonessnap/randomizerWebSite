@@ -1,2 +1,2 @@
 # randomizerWebSite
-https://bonessnap.github.io/randomizerWebSite/
+Здесь что-то было, но я запушил ветку и потерял ридми(
