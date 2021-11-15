@@ -1,7 +1,6 @@
 <?php // Страничка логина на сайт
-    session_start();
 
-    $mysql = new mysqli('localhost', 'root', '', 'mydb');
+    include_once 'lib/include.php';
     
     // Если нету связи с базоой данных редирект с ошибкой 0
     if ($mysql->connect_error) {

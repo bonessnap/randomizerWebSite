@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #cloud{
+            box-sizing: border-box;
+            animation-name: cloud_animation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            font-size: 14px;
+            width: 250px;
+            height: 120px;
+            background-image: url(/img/logo/cat.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        #temp{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 10px;
+        }
+        
+        @keyframes cloud_animation{
+            0%{
+                right: 100%;
+                left: 0%;
+                bottom: 20px;
+            }
+            50%{
+                right: 50%;
+                left: 50%;
+                bottom: 10px;
+            }
+            100%{
+                right: 0%;
+                left: 90%;
+                bottom: 20px;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <!-- Блок с анимацией -->
+    <div style="width: 100%;">
+        <div id="cloud">
+            <div id="temp">
+                <span> Для примера напишу немного текста</span>
+                <span>Может даже много</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

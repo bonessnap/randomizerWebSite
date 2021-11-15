@@ -15,6 +15,71 @@ body{
     overflow: hidden;
 }
 
+/*Main*/
+main{
+    width: 100%;
+    height: 85%;
+    display: inline-grid;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 10fr 4fr;
+    
+}
+
+/* Main content block*/
+#content_block{
+    background-color: #232933; 
+    border: 2px solid #35443b;
+    text-decoration: none;
+    transition: all 0.5s;
+    border-radius: 40px;
+    overflow: auto;
+}
+
+#content_block:hover{
+    border: 2px solid #11A457;  
+}
+
+/* Блок справа*/
+#aside_right{
+    background-color: #232933; 
+    border-radius: 40px;
+    border: 2px solid #35443b;
+    text-decoration: none;
+    transition: all 0.5s;
+    display: grid;
+    padding: 15px;
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+#aside_right:hover{
+    border: 2px solid #11A457;  
+}
+
+/* БЛОК СЛЕВА*/
+#aside_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#profile_block{
+    min-width: 150px;
+    background-color: #232933; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 40px;
+    border: 2px solid #35443b;
+    transition: all 0.5s;
+    font-size: 14px;
+}
+
+#profile_block:hover{
+    border: 2px solid #11A457;  
+}
+
 /*Дизайн текста*/ 
 a{
     color: rgb(169, 238, 186);
@@ -26,7 +91,6 @@ a:hover{
     font-size: 105%;
     
 }
-
 p::selection, h2::selection, h1::selection, li::selection, span::selection{
     color: rgb(255, 255, 255);
     text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
@@ -42,11 +106,9 @@ header, footer{
     text-decoration: none;
     transition: all 0.5s;
 }
-
 header{
     margin-bottom: 20px;
 }
-
 header:hover{
     border-bottom: 3px solid #11A457;
 }
@@ -58,6 +120,8 @@ header:hover{
     display: flex;
     align-items: center;
 }
+
+
 /* BUTTONS*/
 button{
     box-shadow: 0px 5px 10px 2px rgba(37, 255, 17, 0.2);
@@ -71,7 +135,6 @@ button{
     padding: 8px 15px;
     height: 100%;
 }
-
 button:hover{
     color: rgb(255, 255, 255);
     text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
@@ -79,8 +142,8 @@ button:hover{
     background-color: rgb(98, 146, 100);
 }
 
-/* Inputbox*/
 
+/* Inputbox*/
 input{
     background-color: transparent;
     box-decoration-break: unset;
@@ -94,8 +157,104 @@ input{
     outline: none;
     text-align: center;
 }
-
 input::selection{
     color: rgb(255, 255, 255);
     text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
+}
+
+
+/* Блок с картинкой кота в шапке */
+#cat{
+    background: url(/img/logo/cat.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 200px;
+    transition: all 0.5s;
+}
+#cat:hover{
+    background: url(/img/logo/cat_hover.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Блоки с аватаркой пользователя */
+
+/* Анонимный пользователь*/
+#anonymous_user{
+    width: 40px;
+    height: 40px;
+    background: url(/img/user/user_icon_anonym.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+}
+#anonymous_user:hover{
+    background: url(/img/user/user_icon_anonym_hover.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Авторизированный пользователь*/
+#authorised_user{
+    width: 40px;
+    height: 40px;
+    background: url(/img/user/user_icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+}
+#authorised_user:hover{
+    background: url(/img/user/user_icon_hover.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Блоки справа*/
+
+.random_block{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #232933; 
+    border-radius: 40px;
+    border: 2px solid #35443b;
+    transition: all 0.5s;
+}
+.random_block:hover{
+    border: 5px solid #11A457;  
+}
+
+/* Скрол */
+*::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent        /* color of the tracking area */
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: transparent;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #35443b;  /* creates padding around scroll thumb */
+  }
+
+/* ЛОГОТИП в ХИДЕРЕ*/
+#logo{
+    display: flex;
+    background-color: #232933; 
+    padding: 5px;
+    transition: all 0.5s;
+    border: 2px solid #35443b;
+}
+#logo:hover{
+    border: 2px solid #11A457;  
+
+}
+
+#logo_left{
+    color: #232933;
+    background-color: rgb(102, 252, 139);
 }

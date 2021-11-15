@@ -1,5 +1,5 @@
 <?php
-    session_start();
+  include_once 'lib/include.php';
 
     if (isset($_SESSION['username'])) {
         header("Location: /");
@@ -17,11 +17,15 @@
     <title>Authorization</title>
 </head>
 <body>
+    <main>
     <!-- Это блок слева --> 
     <section id="aside_left">
-        <img src="img/logo.png" alt="Profile" width="300px">
+        <div id="cat">
+            
+        </div>
 
-        <section id="block_welcome"> <!-- Это блок с логотипом и текстом--> 
+         <!-- Это блок с текстом-->
+        <section id="block_welcome"> 
             <h1>Добро пожаловать на рандомайзер!</h1>
             <span>Здесь вам пока что доступны:</span>
             <ul>
@@ -29,125 +33,24 @@
                 <li>Логаут</li>
                 <li>Практически пустой сайт</li>
                 <li>Красивый шаблон</li>
+                <li>Что-то ещё будет</li>
             </ul>
         </section>
         
         <!-- Это блок с инфой о авторе и контактом-->
         <section style="font-size: 16px;">
-            <span>Фокша Константин KIT129a</span> <br>
+            <span>(С) Фокша Константин KIT129a</span> <br>
                 <a href="https://t.me/bonessnap">Связаться со мной</a>
                 <a href="https://github.com/bonessnap/randomizerWebSite">Исходники</a>
+                
         </section>
     </section>
 
     <!-- Это блок с ЛОГИНОМ-->
-    <section id="login">
-        <section>
-            <h2>Привет!</h2>
-            <p>Чтобы войти - введите свой логин и пароль.</p>
-            <!-- Форма с данными-->
-            <form action="/lib/login.php" method="get">
-              <section class="block_input">
-                      <span>Логин:</span> 
-                      <input type="text" placeholder="Login" name="username">
-
-                      <span>Пароль:</span>
-                      <input type="password" placeholder="Password" name="userpassword">
-                        <!-- Тут будет сообщение о ошибке логина-->
-                        <span></span>
-                        <span style="font-size: 15px;">
-                        <?php  // если есть ошибка логина
-                            if (isset($_GET['errorCode'])) {
-                                $errorCode = (int)$_GET['errorCode'];
-
-                                switch ($errorCode) {
-                                    case 0: 
-                                        echo 'Нету доступа к базе данных :(';
-                                        break;
-                                    case 1:
-                                        echo 'Пользователя с таким ником нет';
-                                        break;
-                                    case 2:
-                                        echo 'Неправильный пароль';
-                                        break;
-                                    case 3:
-                                        echo 'Успешно зарегистрированно.';
-                                        break;
-                                        
-                                }
-                            }
-                        ?>
-                        </span>
-                </section>
-
-                    <!--  Блок с кнопками -->
-                    <section id="block_with_button">
-                      <button type="submit">
-                          Войти
-                      </button>
-
-                      <a href="#registration"> <button type="button">Зарегистрироваться</button></a>
-                    </section>
-            </form>
-        </section>
-    </section>
+    <?php include 'components/login.php'?>
     
     <!-- это блок с РЕГИСТРАЦИЕЙ -->
-    <section id="registration">
-        <section>
-            <h2>Зарегистрируйтесь сейчас</h2>
-            <p>Придумайте себе логин и пароль</p>
-                <form action="lib/registration.php" method="get">
-                <section class="block_input">
-                      <span>Логин:</span>
-                      <input type="text" placeholder="Login" name="username">
-
-                      <span>Пароль:</span>
-                      <input type="password" placeholder="Password" name="userpassword">
-
-                      <span>Пароль повторно:</span>
-                      <input type="password" placeholder="Password again" name="usersecondpassword">
-
-                    <!-- ЗАТЫЧКА ЧТОБЫ БЛОК С ОШИБКОЙ БЫЛ СПРАВА -->
-                    <span>
-                    </span>
-
-                    <!-- Тут будут ошибки регистрации-->
-                     <span style="font-size: 15px;">
-                        <?php
-                            if (isset($_GET['errorCode'])) {
-                                $errorCode = (int)$_GET['errorCode'];
-
-                                switch ($errorCode) {
-                                    case 0: 
-                                        echo 'Нету доступа к базе данных :(';
-                                        break;
-                                    case 4:
-                                        echo 'Пользователь существует.';
-                                        break;
-                                    case 5:
-                                        echo 'Пароли не совпадают';
-                                        break;
-                                    case 6: 
-                                        echo 'Некорректный пароль';
-                                        break;
-                                }
-                            }
-                        ?>
-                     </span>
-                </section>
-
-                    <!--  Блок с кнопками -->
-                    <section id="block_with_button">
-                    <a href="#login"> <button type="button">Войти</button></a>
-                    <button type="sumbit">
-                        Зарегистрироваться
-                    </button>
-                    </section>
-            </form>
-            
-        </section>
-    </section>
+    <?php include 'components/registration.php'?>    
 
     <!-- Скрипт автоматически редиректит на логин, если был передан неправильный параметр странице -->
     <script> 
@@ -155,5 +58,6 @@
             location.hash = '#login';
         }
     </script>
+    </main>
 </body>
 </html>

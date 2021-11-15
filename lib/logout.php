@@ -1,6 +1,5 @@
 <?php
-
-session_start();
+  include_once 'lib/include.php';
 
 session_unset();
 
