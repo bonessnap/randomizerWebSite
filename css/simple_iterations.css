@@ -1,0 +1,11 @@
+button{
+    height: 50px;
+    width: 150px;
+}
+
+#content_block{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

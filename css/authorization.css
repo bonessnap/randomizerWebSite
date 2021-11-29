@@ -39,10 +39,11 @@ main{
 #aside_left{
     width: 40%;
     height: 100%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 15px;
 }
 /* Блок приветствия и описания*/
 #block_welcome{
@@ -52,13 +53,16 @@ main{
     border-radius: 40px;
     margin-right: 10%;
     margin-bottom: 10%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
     transition: all 0.5s;
 }
 
 #block_welcome:hover{
     border: 2px solid #11A457;  
+}
+
+input{
+    max-width: 300px;
 }
 
 
