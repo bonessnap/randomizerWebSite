@@ -24,9 +24,10 @@ include_once 'lib/include.php';
                 <?php include 'components/aside_left.php' ?>
                 <section id="content_block">
                         <div id="chat">
-                                
+                                <!-- Здесь будет чат -->
                         </div>
 
+                        <!-- Ввод текста и отправка -->
                         <form action="/lib/sendMessage.php" method="GET" onsubmit="return onChatFormSubmit.call(this)" id="text_field">
                                 <input type="text" name="message" require>
                                 <a href="#chat"><button>Отправить</button></a>
@@ -39,25 +40,38 @@ include_once 'lib/include.php';
 
 <script>
         const messagesParent = document.getElementById('chat');
+        let lastmessageid = null;
+
+        // переменная указывает написал ли последнее сообщение пользователь
+        /*если тру - после обновления чата проскролит вниз*/
+        let lastisuser = false;
 
         window.onload = async () => {
                 await updateChat();
 
                 setInterval(updateChat, 1000)
+                messagesParent.scrollTo(0, messagesParent.scrollHeight);
         }
 
+        /* скрипт обновляет чат каждые N секунд*/
         async function updateChat() {
                 const response = await fetch('/lib/chatLoad.php');
                 const messages = await response.json();
 
-                messagesParent.innerHTML = '';
-
-                messages.forEach(message => addMessageToChat(message['username'], message['message_text']));
-
-                messagesParent.scrollTo(0, messagesParent.scrollHeight);
+                // в цикле выводим сообщения в чат
+                if (messages[messages.length - 1]['message_id'] != lastmessageid) {
+                        messagesParent.innerHTML = '';
+                        messages.forEach(message => addMessageToChat(message['username'], message['message_text'], message['message_type']));
+                        lastmessageid = messages[messages.length - 1]['message_id'];
+                        if (lastisuser) {
+                                messagesParent.scrollTo(0, messagesParent.scrollHeight);
+                                lastisuser = false;
+                        }
+                }
         }
 
-        function addMessageToChat(username, message) {
+        /* Скрипт оборачивает сообщение в обертку стиля и отправляет в чат */
+        function addMessageToChat(username, message, message_type) {
                 const articleElement = document.createElement('article');
                 const usernameElement = document.createElement('h3');
                 const messageElement = document.createElement('span');
@@ -66,14 +80,17 @@ include_once 'lib/include.php';
 
                 usernameElement.innerHTML = username;
 
-                messageElement.innerHTML = message;
+                if (message_type == 0)
+                        messageElement.innerText = message;
+                else
+                        messageElement.innerHTML = "<i>" + username + " has rolled " + message + "</i>";
 
                 articleElement.appendChild(usernameElement);
                 articleElement.appendChild(messageElement);
                 messagesParent.appendChild(articleElement);
-
         }
 
+        // здесь выполняется отправка сообщения в базу
         function onChatFormSubmit() {
                 const message = this.message.value;
 
@@ -82,7 +99,7 @@ include_once 'lib/include.php';
                         .then(text => console.log(text));
 
                 this.message.value = '';
-
+                lastisuser = true;
                 return false;
         }
 </script>

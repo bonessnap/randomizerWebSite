@@ -1,62 +1,53 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root{
+  --clr-neon: rgb(102, 252, 139); /* неоновый цвет для кнопки*/
+  --clr-body-bg: rgb(25, 30, 37);   /* фоновый цвет боди*/
+  --clr-blocks-back-color: rgb(35, 41, 51); /* фоновый цвет блоков*/
+  --clr-block-border: #35443b; /* цвет рамки блока*/
+  --clr-block-border-hover: #11A457; /* цвет рамки при наведении на блок*/
+}
 body{
-    border: 2px solid transparent;
-    box-sizing: border-box;
-    background-color: #191e25; 
-    color: rgb(102, 252, 139);
-    margin: 0px;
-    padding: 0px;
-    font-size: 25px;
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+
+    height: 100vh;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    
+    background-color: var(--clr-body-bg); 
+    color: var(--clr-neon);
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
 }
 
 /*Main*/
 main{
     width: 100%;
     height: 85%;
+
     display: inline-grid;
     grid-column-gap: 20px;
     grid-template-columns: 1fr 10fr 4fr;
-    
 }
 
 /* Main content block*/
 #content_block{
-    background-color: #232933; 
-    border: 2px solid #35443b;
-    text-decoration: none;
-    transition: all 0.5s;
-    border-radius: 40px;
     overflow: auto;
-}
-
-#content_block:hover{
-    border: 2px solid #11A457;  
 }
 
 /* Блок справа*/
 #aside_right{
-    background-color: #232933; 
-    border-radius: 40px;
-    border: 2px solid #35443b;
-    text-decoration: none;
-    transition: all 0.5s;
-    display: grid;
     padding: 15px;
+
+    display: grid;
     grid-template-columns: 1fr;
     column-gap: 20px;
     row-gap: 20px;
 }
-
-#aside_right:hover{
-    border: 2px solid #11A457;  
-}
-
 /* БЛОК СЛЕВА*/
 #aside_left{
     display: flex;
@@ -66,47 +57,49 @@ main{
 }
 #profile_block{
     min-width: 150px;
-    background-color: #232933; 
+
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-radius: 40px;
-    border: 2px solid #35443b;
-    transition: all 0.5s;
     font-size: 14px;
 }
 
-#profile_block:hover{
-    border: 2px solid #11A457;  
+/* дизайн всех внутренних блоков*/ 
+#content_block, #aside_right, #profile_block, input, .random_block
+{
+    background-color: var(--clr-blocks-back-color); 
+    border: 2px solid var(--clr-block-border);
+    border-radius: 40px;
+
+    text-decoration: none;
+    transition: all 0.5s;
+}
+#content_block:hover, #aside_right:hover, #profile_block:hover, .random_block:hover, #logo:hover
+{
+    border: 2px solid var(--clr-block-border-hover);  
+}
+#profile_block{
+    padding: 15px;
 }
 
 /*Дизайн текста*/ 
 a{
     color: rgb(169, 238, 186);
-    transition: all 0.5s;
 }
-a:hover{
+p::selection, h2::selection, h1::selection, li::selection, span::selection,a:hover, input::selection{
     color: rgb(255, 255, 255);
-    text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
-    font-size: 105%;
-    
-}
-p::selection, h2::selection, h1::selection, li::selection, span::selection{
-    color: rgb(255, 255, 255);
-    text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
+    text-shadow: 0 0 3px var(--clr-neon), 0 0 5px var(--clr-neon);
 }
 
 /* HEADER FOOTER*/
-header, footer{
+header{
     display: flex;
     justify-content: space-around;
-    border-bottom: 3px solid #35443b;
+    border-bottom: 3px solid var(--clr-block-border);
     font-size: 35px;
     margin-bottom: 10px;
     text-decoration: none;
     transition: all 0.5s;
-}
-header{
     margin-bottom: 20px;
 }
 header:hover{
@@ -123,51 +116,52 @@ header:hover{
 
 /* BUTTONS*/
 button{
-    box-shadow: 0px 5px 10px 2px rgba(37, 255, 17, 0.2);
-    border-radius: 15px;
-    font-size: 20px;
-    border: 3px solid #000000;
-    color: rgb(102, 252, 139);
-    background-color: rgb(76, 114, 78);
+    cursor: pointer;
+    background-color: transparent;
+
     text-decoration: none;
-    transition: all 0.5s;
-    padding: 8px 15px;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    color: var(--clr-neon);
+    font-size: 20px;
+
+    border: var(--clr-neon) 0.125em solid;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+    border-radius: 0.25em;
+
     height: 100%;
+    padding: 8px 15px;
+
+    transition: all 0.5s;
 }
 button:hover{
-    color: rgb(255, 255, 255);
-    text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
-    font-size: 23px;
-    background-color: rgb(98, 146, 100);
-}
+    color: var(--clr-blocks-back-color);
+    text-shadow: none;
 
+    background-color: var(--clr-neon);
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+}
 
 /* Inputbox*/
 input{
-    background-color: transparent;
-    box-decoration-break: unset;
-    background-color: rgb#232933;
-    height: 50px;
-    border: 3px solid #000000;
-    font-size: 20px;
-    color: rgb(102, 252, 139);
-    box-shadow: 0px 5px 10px 2px rgba(37, 255, 17, 0.2);
+    box-shadow: 0px 5px 10px 2px var(--clr-neon);
     border-radius: 10px;
+
+    font-size: 20px;
+    color: var(--clr-neon);
     outline: none;
     text-align: center;
+    box-decoration-break: unset;
+
+    height: 50px;
     max-width: 100px;
 }
-input::selection{
-    color: rgb(255, 255, 255);
-    text-shadow: 0 0 3px lawngreen, 0 0 5px lawngreen;
-}
-
 
 /* Блок с картинкой кота в шапке */
 #cat{
     background: url(/img/logo/cat.png);
     background-size: cover;
     background-repeat: no-repeat;
+
     width: 120px;
     height: 200px;
     transition: all 0.5s;
@@ -179,82 +173,47 @@ input::selection{
 }
 
 
-/* Блоки с аватаркой пользователя */
+/* Блок с аватаркой пользователя */
+#user_image{
+    width: 80px;
+    height: 80px;
 
-/* Анонимный пользователь*/
-#anonymous_user{
-    width: 40px;
-    height: 40px;
-    background: url(/img/user/user_icon_anonym.png);
     background-size: cover;
     background-repeat: no-repeat;
-    transition: all 0.5s;
-}
-#anonymous_user:hover{
-    background: url(/img/user/user_icon_anonym_hover.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
-/* Авторизированный пользователь*/
-#authorised_user{
-    width: 40px;
-    height: 40px;
-    background: url(/img/user/user_icon.png);
-    background-size: cover;
-    background-repeat: no-repeat;
     transition: all 0.5s;
-}
-#authorised_user:hover{
-    background: url(/img/user/user_icon_hover.png);
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 /* Блоки справа*/
-
 .random_block{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #232933; 
-    border-radius: 40px;
-    border: 2px solid #35443b;
-    transition: all 0.5s;
-}
-.random_block:hover{
-    border: 5px solid #11A457;  
 }
 
 /* Скрол */
 *::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
+    width: 12px;
   }
   
   *::-webkit-scrollbar-track {
-    background: transparent        /* color of the tracking area */
+    background: transparent;
   }
   
   *::-webkit-scrollbar-thumb {
-    background-color: transparent;    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 3px solid #35443b;  /* creates padding around scroll thumb */
+    background-color: transparent;
+    border-radius: 20px;
+    border: 3px solid #35443b;
   }
 
 /* ЛОГОТИП в ХИДЕРЕ*/
 #logo{
     display: flex;
-    background-color: #232933; 
     padding: 5px;
     transition: all 0.5s;
-    border: 2px solid #35443b;
+    border: 2px solid var(--clr-block-border);
 }
-#logo:hover{
-    border: 2px solid #11A457;  
-
-}
-
 #logo_left{
-    color: #232933;
-    background-color: rgb(102, 252, 139);
+    color: var(--clr-blocks-back-color);
+    background-color: var(--clr-neon);
 }

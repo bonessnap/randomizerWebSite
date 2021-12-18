@@ -18,9 +18,6 @@
     <button onclick="randomNumber()" style="height: 100px;">Сгенерить рандом</button>
   </article>
   <article class="random_block">
-    <a href="/chat.php">chat</a>
-  </article>
-  <article class="random_block">
     <a href="/debug/ajax/from.php">debug ajax</a>
   </article>
 </aside>
